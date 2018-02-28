@@ -139,3 +139,9 @@ void CTM2Euler(double CTM[][3], Euler *angle)
 	angle->pitch = -asin(CTM[0][2])*deg;
 	angle->yaw = atan2(CTM[0][1], CTM[0][0])*deg;
 }
+
+
+
+
+
+
