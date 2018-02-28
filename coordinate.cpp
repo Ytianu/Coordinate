@@ -23,7 +23,7 @@ void BLH2XYZ(BLH blh, XYZ *xyz)
 }
 
 /***************************************************
-function:¿Õ¼ä×ø±ê×ª»»Îª´óµØ×ø±ê£¨ECEF to BLH)
+function:ç©ºé—´åæ ‡è½¬æ¢ä¸ºå¤§åœ°åæ ‡ï¼ˆECEF to BLH)
 input:X Y Z
 output:B L H
 test?;yes
@@ -36,7 +36,7 @@ void XYZ2BLH(XYZ xyz, BLH *blh)
 	double sinb;
 	double h = 0;
 	double b0 = 1;
-	blh->Latitude = atan2(z,p);    //Ê¹ÓÃµØĞÄÎ³¶ÈÀ´½üËÆ³õÊ¼»¯´óµØÎ³¶È£»µØĞÄÎ³¶ÈĞ¡ÓÚ´óµØÎ³¶È
+	blh->Latitude = atan2(z,p);    //ä½¿ç”¨åœ°å¿ƒçº¬åº¦æ¥è¿‘ä¼¼åˆå§‹åŒ–å¤§åœ°çº¬åº¦ï¼›åœ°å¿ƒçº¬åº¦å°äºå¤§åœ°çº¬åº¦
 	double det = 1.0e-9;
 	while (abs(blh->Latitude - b0) > det)
 	{
@@ -54,8 +54,8 @@ void XYZ2BLH(XYZ xyz, BLH *blh)
 
 
 /*******************************************************************
-function:ÒÔ½ÓÊÕ»úÎ»ÖÃÎªÕ¾ĞÄÔ­µã£¬½«ÎÀĞÇECEF×ª»¯ÎªENU(Õ¾ĞÄ×ø±êÏµ£ºÕ¾ĞÄ×ø±êÏµÎª¶«±±Ìì×ø±êÏµ£©
-ÔÚ¼ÆËãÎÀĞÇ¸ß¶È½ÇºÍ·½Î»½ÇÊ±ÓĞÓÃ¡£
+function:ä»¥æ¥æ”¶æœºä½ç½®ä¸ºç«™å¿ƒåŸç‚¹ï¼Œå°†å«æ˜ŸECEFè½¬åŒ–ä¸ºENU(ç«™å¿ƒåæ ‡ç³»ï¼šç«™å¿ƒåæ ‡ç³»ä¸ºä¸œåŒ—å¤©åæ ‡ç³»ï¼‰
+åœ¨è®¡ç®—å«æ˜Ÿé«˜åº¦è§’å’Œæ–¹ä½è§’æ—¶æœ‰ç”¨ã€‚
 input:recpositin satposition
 output:enu
 test?:yes
@@ -95,23 +95,16 @@ void ENU2XYZ(ENU satenu, XYZ recxyz, XYZ *satxyz)
 }
 
 
-void BDT2GPST(BDTime bdtime, GPSTime *gpstime)
-{
-	gpstime->week = bdtime.week - 1356;
-	gpstime->second = bdtime.second - 14;
-}
-
-
 
 
 /***********************************************************************
-function:×ËÌ¬±ä»»Ä£¿é,ÊµÏÖÅ·À­½ÇºÍ×ËÌ¬×ªÒÆ¾ØÕóµÄ»¥»»
+function:å§¿æ€å˜æ¢æ¨¡å—,å®ç°æ¬§æ‹‰è§’å’Œå§¿æ€è½¬ç§»çŸ©é˜µçš„äº’æ¢
 ***********************************************************************/
 
 
 /******************************************
-function:Euler to CTM£¨×ËÌ¬×ªÒÆ¾ØÕó£©
-input£ºEuler 
+function:Euler to CTMï¼ˆå§¿æ€è½¬ç§»çŸ©é˜µï¼‰
+inputï¼šEuler 
 ouput:CTM
 test?:yes
 *******************************************/
@@ -135,8 +128,8 @@ void Euler2CTM(Euler angle,double CTM[][3])
 
 
 /******************************************
-function: CTM£¨×ËÌ¬×ªÒÆ¾ØÕó£©to Euler
-input£ºCTM
+function: CTMï¼ˆå§¿æ€è½¬ç§»çŸ©é˜µï¼‰to Euler
+inputï¼šCTM
 ouput:Euler
 test?:yes
 *******************************************/
